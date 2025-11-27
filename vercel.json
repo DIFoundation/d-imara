@@ -1,0 +1,14 @@
+{
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "outputDirectory": ".next",
+  "env": {
+    "NEXT_PUBLIC_SUPABASE_URL": "@supabase_url",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@supabase_anon_key",
+    "NEXT_PUBLIC_CAMP_RPC_URL": "@camp_rpc_url",
+    "NEXT_PUBLIC_REWARD_CONTRACT_ADDRESS": "@reward_contract_address",
+    "NEXT_PUBLIC_WALLET_CONTRACT_ADDRESS": "@wallet_contract_address",
+    "NEXT_PUBLIC_FUNDING_POOL_ADDRESS": "@funding_pool_address",
+    "BLOCKCHAIN_PRIVATE_KEY": "@blockchain_private_key"
+  }
+}
