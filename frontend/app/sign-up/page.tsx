@@ -60,22 +60,22 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 to-cyan-50 flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <div className="text-2xl font-bold text-green-600 mb-2">D-Imara</div>
+          <div className="text-2xl font-bold text-[#0076B5] mb-2">D-Imara</div>
           <CardTitle>Create Account</CardTitle>
           <CardDescription>Join our learning community and start earning rewards</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="text-sm font-medium">Full Name</label>
+              <label className="text-sm font-medium text-[#03045E]">Full Name</label>
               <Input name="name" placeholder="Your name" value={formData.name} onChange={handleChange} required />
             </div>
 
             <div>
-              <label className="text-sm font-medium">Email</label>
+              <label className="text-sm font-medium text-[#03045E]">Email</label>
               <Input
                 type="email"
                 name="email"
@@ -87,7 +87,7 @@ export default function SignUpPage() {
             </div>
 
             <div>
-              <label className="text-sm font-medium">Password</label>
+              <label className="text-sm font-medium text-[#03045E]">Password</label>
               <Input
                 type="password"
                 name="password"
@@ -99,12 +99,12 @@ export default function SignUpPage() {
             </div>
 
             <div>
-              <label className="text-sm font-medium">Role</label>
+              <label className="text-sm font-medium text-[#03045E]">Role</label>
               <Select value={formData.role} onValueChange={handleRoleChange}>
                 <SelectTrigger>
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-white">
                   <SelectItem value="student">Student</SelectItem>
                   <SelectItem value="teacher">Teacher/Admin</SelectItem>
                   <SelectItem value="donor">Donor/NGO</SelectItem>
@@ -115,7 +115,7 @@ export default function SignUpPage() {
             {formData.role === "student" && (
               <>
                 <div>
-                  <label className="text-sm font-medium">School ID</label>
+                  <label className="text-sm font-medium text-[#03045E]">School ID</label>
                   <Input
                     name="schoolId"
                     placeholder="e.g., SCHOOL001"
@@ -126,7 +126,7 @@ export default function SignUpPage() {
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium">Guardian Phone Number</label>
+                  <label className="text-sm font-medium text-[#03045E]">Guardian Phone Number</label>
                   <Input
                     name="guardianPhone"
                     placeholder="e.g., 08012345678"
@@ -138,13 +138,13 @@ export default function SignUpPage() {
               </>
             )}
 
-            <Button type="submit" className="w-full bg-green-600 hover:bg-green-700" disabled={isLoading}>
+            <Button type="submit" className="w-full bg-[#0076B5] hover:bg-[#00B3D7] text-white" disabled={isLoading}>
               {isLoading ? "Creating account..." : "Create Account"}
             </Button>
 
-            <p className="text-center text-sm text-gray-600">
+            <p className="text-center text-sm text-[#03045E]">
               Already have an account?{" "}
-              <Link href="/login" className="text-green-600 hover:underline font-medium">
+              <Link href="/login" className="text-[#0076B5] hover:underline font-medium">
                 Login here
               </Link>
             </p>

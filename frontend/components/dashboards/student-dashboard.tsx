@@ -18,9 +18,9 @@ export default function StudentDashboard() {
   })
 
   const tierThresholds = {
-    Bronze: { min: 0, max: 50, color: "bg-gray-400" },
-    Silver: { min: 51, max: 100, color: "bg-gray-300" },
-    Gold: { min: 101, max: 200, color: "bg-yellow-400" },
+    Bronze: { min: 0, max: 50, color: "bg-[#8FDFEE]" },
+    Silver: { min: 51, max: 100, color: "bg-[#C9EFF7]" },
+    Gold: { min: 101, max: 200, color: "bg-[#00B3D7]" },
   }
 
   const currentTier = tierThresholds[studentData.tier as keyof typeof tierThresholds]
@@ -29,10 +29,10 @@ export default function StudentDashboard() {
   return (
     <div className="space-y-6">
       {/* Welcome Card */}
-      <Card className="bg-gradient-to-r from-green-600 to-blue-600 text-white border-0">
+      <Card className="bg-linear-to-r from-[#0076B5] to-[#00B3D7] text-white border-0">
         <CardHeader>
           <CardTitle className="text-3xl">Welcome, {studentData.name}!</CardTitle>
-          <CardDescription className="text-green-100">Keep learning and earning rewards</CardDescription>
+          <CardDescription className="text-blue-100">Keep learning and earning rewards</CardDescription>
         </CardHeader>
       </Card>
 
@@ -40,46 +40,46 @@ export default function StudentDashboard() {
       <div className="grid md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium text-gray-600">Learning Points</CardTitle>
+            <CardTitle className="text-sm font-medium text-[#03045E]">Learning Points</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-green-600">{studentData.learningPoints}</div>
+            <div className="text-3xl font-bold text-[#0076B5]">{studentData.learningPoints}</div>
             <p className="text-xs text-gray-500 mt-2">Points earned</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="flex items-center gap-2 text-sm font-medium text-gray-600">
-              <Award className="w-4 h-4" />
+            <CardTitle className="flex items-center gap-2 text-sm font-medium text-[#03045E]">
+              <Award className="w-4 h-4 text-[#0076B5]" />
               Tier
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-yellow-500">{studentData.tier}</div>
+            <div className="text-3xl font-bold text-[#00B3D7]">{studentData.tier}</div>
             <p className="text-xs text-gray-500 mt-2">Achievement level</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium text-gray-600">Quizzes Done</CardTitle>
+            <CardTitle className="text-sm font-medium text-[#03045E]">Quizzes Done</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-blue-600">{studentData.totalQuizzes}</div>
+            <div className="text-3xl font-bold text-[#0076B5]">{studentData.totalQuizzes}</div>
             <p className="text-xs text-gray-500 mt-2">Completed</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="flex items-center gap-2 text-sm font-medium text-gray-600">
-              <Wallet className="w-4 h-4" />
+            <CardTitle className="flex items-center gap-2 text-sm font-medium text-[#03045E]">
+              <Wallet className="w-4 h-4 text-[#0076B5]" />
               Balance
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-green-600">₦{studentData.balance}</div>
+            <div className="text-3xl font-bold text-[#00B3D7]">₦{studentData.balance}</div>
             <p className="text-xs text-gray-500 mt-2">Credits</p>
           </CardContent>
         </Card>
@@ -188,7 +188,7 @@ export default function StudentDashboard() {
               <CardDescription>View and manage your education credits</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white p-6 rounded-lg">
+              <div className="bg-linear-to-r from-[#0076B5] to-[#00B3D7] text-white p-6 rounded-lg">
                 <p className="text-sm opacity-80">Available Balance</p>
                 <p className="text-4xl font-bold">₦{studentData.balance}</p>
               </div>

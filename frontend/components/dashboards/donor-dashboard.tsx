@@ -34,13 +34,13 @@ export default function DonorDashboard() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <Card className="bg-gradient-to-r from-purple-600 to-pink-600 text-white border-0">
+      <Card className="bg-linear-to-r from-[#0076B5] to-[#00B3D7] text-white border-0">
         <CardHeader>
           <CardTitle className="text-3xl flex items-center gap-2">
             <Heart className="w-8 h-8" />
             Impact Dashboard
           </CardTitle>
-          <CardDescription className="text-purple-100">
+          <CardDescription className="text-blue-100">
             See how your donations are transforming education
           </CardDescription>
         </CardHeader>
@@ -50,49 +50,49 @@ export default function DonorDashboard() {
       <div className="grid md:grid-cols-4 gap-4">
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="flex items-center gap-2 text-sm font-medium text-gray-600">
-              <Users className="w-4 h-4" />
+            <CardTitle className="flex items-center gap-2 text-sm font-medium text-[#03045E]">
+              <Users className="w-4 h-4 text-[#0076B5]" />
               Students Helped
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-blue-600">50</div>
+            <div className="text-3xl font-bold text-[#0076B5]">50</div>
             <p className="text-xs text-gray-500 mt-2">+10 this week</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium text-gray-600">Total Donated</CardTitle>
+            <CardTitle className="text-sm font-medium text-[#03045E]">Total Donated</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-purple-600">₦30,000</div>
+            <div className="text-3xl font-bold text-[#00B3D7]">₦30,000</div>
             <p className="text-xs text-gray-500 mt-2">Test tokens</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="flex items-center gap-2 text-sm font-medium text-gray-600">
-              <Zap className="w-4 h-4" />
+            <CardTitle className="flex items-center gap-2 text-sm font-medium text-[#03045E]">
+              <Zap className="w-4 h-4 text-[#0076B5]" />
               Credits Released
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-yellow-600">₦30,000</div>
+            <div className="text-3xl font-bold text-[#8FDFEE]">₦30,000</div>
             <p className="text-xs text-gray-500 mt-2">To verified students</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="flex items-center gap-2 text-sm font-medium text-gray-600">
-              <TrendingUp className="w-4 h-4" />
+            <CardTitle className="flex items-center gap-2 text-sm font-medium text-[#03045E]">
+              <TrendingUp className="w-4 h-4 text-[#0076B5]" />
               Avg Improvement
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-green-600">+20%</div>
+            <div className="text-3xl font-bold text-[#00B3D7]">+20%</div>
             <p className="text-xs text-gray-500 mt-2">Student scores</p>
           </CardContent>
         </Card>

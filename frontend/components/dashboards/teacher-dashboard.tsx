@@ -21,7 +21,7 @@ export default function TeacherDashboard() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0">
+      <Card className="bg-linear-to-r from-[#0076B5] to-[#00B3D7] text-white border-0">
         <CardHeader>
           <CardTitle className="text-3xl">Teacher Admin Panel</CardTitle>
           <CardDescription className="text-blue-100">Manage student enrollments and verify performance</CardDescription>
@@ -32,28 +32,28 @@ export default function TeacherDashboard() {
       <div className="grid md:grid-cols-3 gap-4">
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium text-gray-600">Active Students</CardTitle>
+            <CardTitle className="text-sm font-medium text-[#03045E]">Active Students</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-blue-600">{activeStudents.length}</div>
+            <div className="text-3xl font-bold text-[#0076B5]">{activeStudents.length}</div>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium text-gray-600">Pending Verifications</CardTitle>
+            <CardTitle className="text-sm font-medium text-[#03045E]">Pending Verifications</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-yellow-600">{pendingVerifications.length}</div>
+            <div className="text-3xl font-bold text-[#FFA500]">{pendingVerifications.length}</div>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm font-medium text-gray-600">Total Credits Released</CardTitle>
+            <CardTitle className="text-sm font-medium text-[#03045E]">Total Credits Released</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-green-600">₦5,000</div>
+            <div className="text-3xl font-bold text-[#00B3D7]">₦5,000</div>
           </CardContent>
         </Card>
       </div>
@@ -61,8 +61,12 @@ export default function TeacherDashboard() {
       {/* Tabs */}
       <Tabs defaultValue="verifications" className="w-full">
         <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="verifications">Verifications</TabsTrigger>
-          <TabsTrigger value="students">Active Students</TabsTrigger>
+          <TabsTrigger value="verifications" className="data-[state=active]:bg-[#0076B5] data-[state=active]:text-white">
+            Verifications
+          </TabsTrigger>
+          <TabsTrigger value="students" className="data-[state=active]:bg-[#0076B5] data-[state=active]:text-white">
+            Active Students
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="verifications" className="space-y-4">
@@ -75,16 +79,16 @@ export default function TeacherDashboard() {
               {pendingVerifications.map((student) => (
                 <div key={student.id} className="flex items-center justify-between p-4 border rounded-lg">
                   <div>
-                    <p className="font-medium">{student.name}</p>
+                    <p className="font-medium text-[#03045E]">{student.name}</p>
                     <p className="text-sm text-gray-600">ID: {student.schoolId}</p>
                     <p className="text-sm text-gray-600">Guardian: {student.guardianPhone}</p>
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" className="bg-green-600 hover:bg-green-700 gap-1">
+                    <Button size="sm" className="bg-[#0076B5] hover:bg-[#00B3D7] gap-1">
                       <CheckCircle2 className="w-4 h-4" />
                       Approve
                     </Button>
-                    <Button size="sm" variant="outline" className="gap-1 bg-transparent">
+                    <Button size="sm" variant="outline" className="gap-1 text-[#03045E] border-[#03045E] hover:bg-[#C9EFF7]">
                       <XCircle className="w-4 h-4" />
                       Reject
                     </Button>
@@ -166,7 +170,7 @@ export default function TeacherDashboard() {
                         Release ₦{student.tier === "Gold" ? "2000" : "1000"} in education credits
                       </p>
                     </div>
-                    <Button size="sm" className="bg-green-600 hover:bg-green-700">
+                    <Button size="sm" className="bg-[#0076B5] hover:bg-[#00B3D7]">
                       Approve Release
                     </Button>
                   </div>

@@ -31,44 +31,46 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 to-cyan-50 flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <div className="text-2xl font-bold text-green-600 mb-2">D-Imara</div>
+          <div className="text-2xl font-bold text-[#0076B5] mb-2">D-Imara</div>
           <CardTitle>Welcome Back</CardTitle>
           <CardDescription>Login to your account and continue learning</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="text-sm font-medium">Email</label>
+              <label className="text-sm font-medium text-[#03045E]">Email</label>
               <Input
                 type="email"
                 placeholder="your@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                className="border-[#8FDFEE] focus:border-[#0076B5] focus:ring-[#0076B5]"
               />
             </div>
 
             <div>
-              <label className="text-sm font-medium">Password</label>
+              <label className="text-sm font-medium text-[#03045E]">Password</label>
               <Input
                 type="password"
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                className="border-[#8FDFEE] focus:border-[#0076B5] focus:ring-[#0076B5]"
               />
             </div>
 
-            <Button type="submit" className="w-full bg-green-600 hover:bg-green-700" disabled={isLoading}>
+            <Button type="submit" className="w-full bg-[#0076B5] hover:bg-[#00B3D7] text-white" disabled={isLoading}>
               {isLoading ? "Logging in..." : "Login"}
             </Button>
 
-            <p className="text-center text-sm text-gray-600">
-              Don't have an account?{" "}
-              <Link href="/sign-up" className="text-green-600 hover:underline font-medium">
+            <p className="text-center text-sm text-[#03045E]">
+              Don&apos;t have an account?{" "}
+              <Link href="/sign-up" className="text-[#0076B5] hover:underline font-medium">
                 Sign up here
               </Link>
             </p>

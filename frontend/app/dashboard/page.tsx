@@ -10,31 +10,31 @@ export default function DashboardPage() {
   const [userRole, setUserRole] = useState<"student" | "teacher" | "donor">("student")
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 to-cyan-50">
       {/* Navigation */}
       <nav className="bg-white shadow-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-green-600">D-Imara</h1>
+            <h1 className="text-2xl font-bold text-[#0076B5]">D-Imara</h1>
             <div className="flex gap-2">
               <Button
                 variant={userRole === "student" ? "default" : "ghost"}
                 onClick={() => setUserRole("student")}
-                className={userRole === "student" ? "bg-green-600" : ""}
+                className={userRole === "student" ? "bg-[#0076B5] hover:bg-[#00B3D7]" : "text-[#03045E] hover:bg-[#C9EFF7]"}
               >
                 Student
               </Button>
               <Button
                 variant={userRole === "teacher" ? "default" : "ghost"}
                 onClick={() => setUserRole("teacher")}
-                className={userRole === "teacher" ? "bg-green-600" : ""}
+                className={userRole === "teacher" ? "bg-[#0076B5] hover:bg-[#00B3D7]" : "text-[#03045E] hover:bg-[#C9EFF7]"}
               >
                 Teacher
               </Button>
               <Button
                 variant={userRole === "donor" ? "default" : "ghost"}
                 onClick={() => setUserRole("donor")}
-                className={userRole === "donor" ? "bg-green-600" : ""}
+                className={userRole === "donor" ? "bg-[#0076B5] hover:bg-[#00B3D7]" : "text-[#03045E] hover:bg-[#C9EFF7]"}
               >
                 Donor
               </Button>
