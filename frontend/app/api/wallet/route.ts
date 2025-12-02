@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json(wallet)
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to fetch wallet" }, { status: 500 })
   }
 }
@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json(transaction, { status: 201 })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to process transaction" }, { status: 500 })
   }
 }

@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
     let correctAnswers = 0
     const totalQuestions = answers.length
 
-    answers.forEach((answer: any) => {
+    answers.forEach((answer: { correct: boolean }) => {
       if (answer.correct) correctAnswers++
     })
 
@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
     // }
 
     return NextResponse.json(response, { status: 201 })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to submit quiz" }, { status: 500 })
   }
 }

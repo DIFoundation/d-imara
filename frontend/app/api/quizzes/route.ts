@@ -42,7 +42,7 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json(mockQuizzes)
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to fetch quizzes" }, { status: 500 })
   }
 }
@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
     // await supabase.from('quizzes').insert([newQuiz])
 
     return NextResponse.json(newQuiz, { status: 201 })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to create quiz" }, { status: 500 })
   }
 }

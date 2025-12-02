@@ -1,25 +1,31 @@
-import type React from "react"
-// ... existing code ...
-import type { Metadata } from "next"
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
 
-// <CHANGE> Update metadata for D-Imara platform
+const inter = Inter({ subsets: ['latin'] })
+
+import { headers } from 'next/headers' // added
+import ContextProvider from '@/context'
+
 export const metadata: Metadata = {
-  title: "D-Imara - Smart Learning & Micro-Funding",
-  description: "Gamified learning platform with blockchain-based education credits",
-    generator: 'v0.app'
+  title: 'D-Imara - Smart Learning & Micro-Funding',
+  description: 'Gamified learning platform with blockchain-based education credits',
 }
 
-export default function RootLayout({
-  children,
-}: {
+export default async function RootLayout({
+  children
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
+
+  const headersObj = await headers();
+  const cookies = headersObj.get('cookie')
+
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans antialiased`}>{children}</body>
+    <html lang="en">
+      <body className={inter.className}>
+        <ContextProvider cookies={cookies}>{children}</ContextProvider>
+      </body>
     </html>
   )
 }
-
-
-import './globals.css'

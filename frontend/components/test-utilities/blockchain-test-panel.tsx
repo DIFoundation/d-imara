@@ -9,6 +9,7 @@ export default function BlockchainTestPanel() {
   const [studentAddress, setStudentAddress] = useState("")
   const [points, setPoints] = useState("10")
   const [isLoading, setIsLoading] = useState(false)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [result, setResult] = useState<any>(null)
 
   const testAwardCredits = async () => {

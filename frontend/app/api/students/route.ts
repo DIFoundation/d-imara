@@ -4,6 +4,8 @@ export async function GET(request: NextRequest) {
   try {
     const schoolId = request.nextUrl.searchParams.get("schoolId")
 
+    console.log(schoolId)
+
     // In production, fetch from database
     // const students = await supabase.from('students').select('*').eq('school_id', schoolId)
 
@@ -30,7 +32,7 @@ export async function GET(request: NextRequest) {
     ]
 
     return NextResponse.json(mockStudents)
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to fetch students" }, { status: 500 })
   }
 }
