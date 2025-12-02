@@ -68,7 +68,7 @@ export class BlockchainClient {
       const signer = this.getSigner(signerPrivateKey)
       const contract = this.rewardContract.connect(signer)
 
-      const tx = await contract.awardCredits(studentAddress, points)
+      const tx = await contract.getFunction("awardCredits")(studentAddress, points)
       const receipt = await tx.wait()
 
       return {
@@ -93,7 +93,7 @@ export class BlockchainClient {
       const signer = this.getSigner(signerPrivateKey)
       const contract = this.rewardContract.connect(signer)
 
-      const tx = await contract.awardTierBonus(studentAddress, tier)
+      const tx = await contract.getFunction("awardTierBonus")(studentAddress, tier)
       const receipt = await tx.wait()
 
       return {
@@ -120,7 +120,7 @@ export class BlockchainClient {
       const signer = this.getSigner(signerPrivateKey)
       const contract = this.walletContract.connect(signer)
 
-      const tx = await contract.createWallet(studentAddress)
+      const tx = await contract.getFunction("createWallet")(studentAddress)
       const receipt = await tx.wait()
 
       return {
@@ -158,7 +158,7 @@ export class BlockchainClient {
       const signer = this.getSigner(signerPrivateKey)
       const contract = this.fundingPool.connect(signer)
 
-      const tx = await contract.approveDisbursement(studentAddress, amount, school)
+      const tx = await contract.getFunction("approveDisbursement")(studentAddress, amount, school)
       const receipt = await tx.wait()
 
       return {
@@ -182,7 +182,7 @@ export class BlockchainClient {
    */
   async getPoolStats() {
     try {
-      const { total, disbursementCount } = await this.fundingPool.getPoolInfo()
+      const { total, disbursementCount } = await this.fundingPool.getFunction("getPoolInfo")()
       return {
         totalPoolBalance: Number.parseInt(total.toString()),
         disbursementCount: Number.parseInt(disbursementCount.toString()),
