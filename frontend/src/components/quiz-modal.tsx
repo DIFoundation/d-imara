@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { useOnChainStorage } from "@/lib/use-on-chain"
+// import { useOnChainStorage } from "@/lib/use-on-chain"
 import { getQuizById, calculateScore } from "@/lib/quiz-data"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
@@ -19,8 +19,9 @@ export default function QuizModal({ quizId, onClose, onComplete }: QuizModalProp
   const [answers, setAnswers] = useState<number[]>([])
   const [submitting, setSubmitting] = useState(false)
   const [finished, setFinished] = useState(false)
+  // eslint-disable-next-line
   const [result, setResult] = useState<any>(null)
-  const { recordScore } = useOnChainStorage()
+  // const { recordScore } = useOnChainStorage()
 
   const quiz = getQuizById(quizId)
   if (!quiz) return null
@@ -46,14 +47,14 @@ export default function QuizModal({ quizId, onClose, onComplete }: QuizModalProp
       const { score, percentage, reward } = calculateScore(quiz, finalAnswers)
 
       // Record on-chain
-      const recordResult = await recordScore(quizId, score)
+      // const recordResult = await recordScore(quizId, score)
 
       setResult({
         score,
         percentage,
         reward,
-        txHash: recordResult.txHash,
-        success: recordResult.success,
+        // txHash: recordResult.txHash,
+        // success: recordResult.success,
       })
       setFinished(true)
     } finally {

@@ -15,12 +15,14 @@ if (!projectId) {
 }
 
 // Set up metadata
-const metadata = {
+export const metadata = {
   name: 'appkit-example',
   description: 'AppKit Example',
   url: 'https://appkitexampleapp.com', // origin must match your domain & subdomain
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
+
+console.log('Metadata:', metadata)
 
 // Create the modal
 const modal = createAppKit({

@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
-import { useAccount } from "wagmi"
-import { useOnChainStorage } from "@/lib/use-on-chain"
+import { useConnection } from "wagmi"
+import { useBalance } from "wagmi"
+// import { useOnChainStorage } from "@/lib/use-on-chain"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -10,8 +11,9 @@ import { Progress } from "@/components/ui/progress"
 import QuizModal from "@/components/quiz-modal"
 
 export default function StudentDashboard() {
-  const { address } = useAccount()
-  const { balance } = useOnChainStorage()
+  const { address } = useConnection()
+  const { data: balanceData } = useBalance({ address: address })
+  // const { balance } = useOnChainStorage()
   const [selectedQuiz, setSelectedQuiz] = useState<number | null>(null)
   const [completed, setCompleted] = useState(0)
   const [stats, setStats] = useState({ rank: 0, totalPoints: 0, streak: 0 })
@@ -42,7 +44,7 @@ export default function StudentDashboard() {
             <CardTitle className="text-sm text-slate-600">Balance</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-2xl font-bold text-blue-600">{balance} DMR</p>
+            <p className="text-2xl font-bold text-blue-600">{balanceData?.value} DMR</p>
           </CardContent>
         </Card>
         <Card>
