@@ -1,16 +1,16 @@
 "use client"
 
 import { useState } from "react"
-import { useAccount } from "wagmi"
-import { useOnChainStorage } from "@/lib/use-on-chain"
+import { useConnection } from "wagmi"
+// import { useOnChainStorage } from "@/lib/use-on-chain"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 
 export default function DonorDashboard() {
-  const { address } = useAccount()
-  const { transferTokens } = useOnChainStorage()
+  const { address } = useConnection()
+  // const { transferTokens } = useOnChainStorage()
   const [donations, setDonations] = useState([
     {
       id: 1,
@@ -145,7 +145,7 @@ export default function DonorDashboard() {
         <div>
           <h2 className="text-xl font-bold mb-4">Donation History</h2>
           <div className="space-y-3">
-            {donations.map((donation: any) => (
+            {donations.map((donation) => (
               <Card key={donation.id} className="hover:shadow-md transition-shadow">
                 <CardContent className="pt-6">
                   <div className="flex justify-between items-start">
